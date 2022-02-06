@@ -12,12 +12,12 @@ const waitlists = async (
 ): Promise<void> => {
   try {
     Logger.info(formatLog(req, "Adding to a waitlist"));
-    const { firstName, lastName, email, userType, description } = req.body;
+    const { firstName, lastName, email, userTypes, description } = req.body;
     await Waitlist.create({
       firstName,
       lastName,
       email,
-      userType,
+      userTypes,
       description
     });
     Logger.info(

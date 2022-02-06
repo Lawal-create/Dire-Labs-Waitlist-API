@@ -9,7 +9,7 @@ export interface IWaitlist extends Document, TimeStamps {
   firstName: string;
   lastName: string;
   email: string;
-  userType: "investors" | "asset-listers";
+  userTypes: "investors" | "asset-listers";
   description: string;
 }
 
@@ -31,7 +31,7 @@ const WaitlistSchema: Schema = new Schema(
       unique: true,
       required: [true, "Email address is required"]
     },
-    userType: {
+    userTypes: {
       type: String,
       required: true,
       enum: ["asset-listers", "investors"]

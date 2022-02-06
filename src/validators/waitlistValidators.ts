@@ -17,8 +17,8 @@ export const waitlistValidator = Joi.object({
     .required()
     .valid("asset-listers", "investors")
     .messages({
-      "any.required": "User type is required",
-      "any.only": "User type must be asset-listers or investors"
+      "any.required": "User types is required",
+      "any.only": "User types must be asset-listers or investors"
     }),
   description: Joi.string().required().messages({
     "any.required": "Description is required"

@@ -53,5 +53,14 @@ const errorHandler = (
     message = err.message;
     errCode = 400;
   }
+  logger.error(
+    `[${req.method} ${req.url}] ${
+      //convert other data types to strings to ensure readability in logs
+      typeof message === "string" ? message : JSON.stringify(message)
+    }`
+  );
+
   errorResponse(res, errCode, message);
 };
+
+export default errorHandler;
